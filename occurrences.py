@@ -20,7 +20,7 @@ def occurrences3(string, substring):
     if len(substring) > 1:  
         len_substring = len(substring)
         for i in range(len(string)):
-            for j in range(len(next_letter)):
+            for j in range(len(substring)):
                 if string[i] == next_letter[0]:
                     count += 1
                     next_letter = next_letter[1:]
