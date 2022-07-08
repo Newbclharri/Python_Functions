@@ -17,27 +17,27 @@ def occurrences3(string, substring):
     next_letter = substring
     numerator = 0
     
-    if len(substring) > 1:  
-        len_substring = len(substring)
-        for i in range(len(string)):
-            for j in range(len(substring)):
-                if string[i] == next_letter[0]:
-                    count += 1
-                    next_letter = next_letter[1:]
-                    if count == len(substring): #an occurrence was found
-                        numerator += len_substring
-                        next_letter = substring
-                        count = 0
-                    break
-                else:
-                    next_letter = substring
-                    count = 0                    
-        return int(numerator / len_substring)
-    else:
-        for i in range(len(string)):
-            if string[i] == substring:
+    # if len(substring) > 1:  
+    len_substring = len(substring)
+    for i in range(len(string)):
+        for j in range(len(substring)):
+            if string[i] == next_letter[0]:
                 count += 1
-        return count
+                next_letter = next_letter[1:]
+                if count == len(substring): #an occurrence was found
+                    numerator += len_substring
+                    next_letter = substring
+                    count = 0
+                break
+            else:
+                next_letter = substring
+                count = 0                    
+    return int(numerator / len_substring)
+    # else:
+    #     for i in range(len(string)):
+    #         if string[i] == substring:
+    #             count += 1
+    #     return count
     
 #################
 ## TEST FUNCTIONS
